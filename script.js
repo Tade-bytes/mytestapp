@@ -1,9 +1,9 @@
-const { default: axios } = ("axios");
-
 let movies = [];
 axios.get('https://www.omdbapi.com/?s=all&type=movie&apikey=e95f2e70')
   .then(response => {
-    movies = response.data;
+    // movies = response.data;
+    console.log(response.data)
+
   })
   .catch(error => {
     console.log(error);
@@ -11,8 +11,12 @@ axios.get('https://www.omdbapi.com/?s=all&type=movie&apikey=e95f2e70')
   });
   
 const parent = document.getElementById('video-container');
+parent.innerHTML += 'Hello World'
 movies.map((movie) => {parent.innerHTML += `<div class="video-box">
 <img src=${movie.Poster} />
 <h2>${movie.Title}</h2>
 <p>${movie.Year}</p>
-</div>})`});
+</div>})
+
+`}
+);
