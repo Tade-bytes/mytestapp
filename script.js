@@ -1,7 +1,7 @@
+const { default: axios } = ("axios");
 
 let movies = [];
-const axios = require('axios');
-axios.get('https://www.omdbapi.com')
+axios.get('https://www.omdbapi.com/?s=all&type=movie&apikey=e95f2e70')
   .then(response => {
     movies = response.data;
   })
